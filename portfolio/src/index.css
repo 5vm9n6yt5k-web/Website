@@ -1,0 +1,342 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Variables ─────────────────────────────────── */
+:root {
+  --ink:   #0c0b0a;
+  --paper: #f5f3ef;
+  --mid:   #888480;
+  --light: #d8d4cf;
+  --dim:   #3a3835;
+}
+
+/* ─── Base reset ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: 'Barlow', system-ui, sans-serif;
+  font-weight: 300;
+}
+
+/* ─── Scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--paper); }
+::-webkit-scrollbar-thumb { background: var(--light); border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: var(--mid); }
+
+/* ─── Typography ─────────────────────────────────── */
+/* `font-display` removed in favor of `font-ui` used globally;
+   keep typography definitions in Tailwind config / `body` rule. */
+
+/* ─── Page animation ─────────────────────────────── */
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: pageIn 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+/* ─── Project grid ───────────────────────────────── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 32vw;
+  gap: 4px;
+  padding: 4px;
+}
+
+/* Desktop: 3-column layout */
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 32vw;
+  }
+  .grid-item-1, .grid-item-2, .grid-item-3,
+  .grid-item-4, .grid-item-5, .grid-item-6 { 
+    grid-column: span 1; 
+    grid-row: span 1;
+  }
+}
+
+/* Tablet: 2-column layout */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 42vw;
+    gap: 4px;
+  }
+  .grid-item-1, .grid-item-2, .grid-item-3,
+  .grid-item-4, .grid-item-5, .grid-item-6 { 
+    grid-column: span 1; 
+  }
+}
+
+/* Mobile: single column */
+@media (max-width: 639px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 60vw;
+    gap: 3px;
+  }
+  .grid-item-1, .grid-item-2, .grid-item-3,
+  .grid-item-4, .grid-item-5, .grid-item-6 {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ─── Project card ───────────────────────────────── */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+  display: block;
+}
+
+.project-card:hover img {
+  transform: scale(1.0);
+}
+
+.project-card .card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(12, 11, 10, 0.75) 0%,
+    rgba(12, 11, 10, 0.15) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.project-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.project-card .card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 24px;
+  transform: translateY(6px);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.project-card:hover .card-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Nav ────────────────────────────────────────── */
+.nav-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-root.nav-scrolled {
+  background: rgba(245, 243, 239, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--light);
+}
+
+.nav-root.nav-dark {
+  color: #f5f3ef;
+}
+
+.nav-root.nav-dark.nav-scrolled {
+  background: rgba(12, 11, 10, 0.88);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Mobile menu overlay */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: var(--ink);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ─── Experience credits ─────────────────────────── */
+.credit-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0 40px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--light);
+}
+
+@media (max-width: 640px) {
+  .credit-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+/* ─── Hero image ─────────────────────────────────── */
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── Gallery image ──────────────────────────────── */
+.gallery-image {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* ─── Underline link ─────────────────────────────── */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* ─── Section rule ───────────────────────────────── */
+.section-rule {
+  width: 100%;
+  height: 1px;
+  background: var(--light);
+  margin: 0;
+}
+
+/* ─── Print / PDF styles ────────────────────────── */
+@media print, (prefers-color-scheme: light) {
+  #cv-content {
+    background: white;
+    color: #0c0b0a;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 15mm;
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav, .nav-root, .mobile-menu {
+    display: none !important;
+  }
+
+  #cv-content {
+    page-break-after: always;
+  }
+
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+
+  .section-rule {
+    background: #d8d4cf;
+  }
+
+  table {
+    page-break-inside: avoid;
+  }
+
+  tr {
+    page-break-inside: avoid;
+  }
+}
+
+/* ─── Animation ──────────────────────────────────── */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
