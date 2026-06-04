@@ -28,7 +28,7 @@ export default function Landing() {
         {/* Centered ENTER */}
         <div className="absolute inset-0 flex items-center justify-center">
           <Link
-            to="/work"
+            to="/film"
             className="group relative flex flex-col items-center justify-center"
           >
             <span

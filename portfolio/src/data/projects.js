@@ -99,7 +99,7 @@ const projectsData = [
 
     media: {
       type: 'image',
-      src: '/images/projects/Collison/Timeline 1_00_00_06_12.jpg'
+      src: '/images/projects/Collison/Timeline 1_00_00_06_12.webp'
     },
 
     heroMedia: {
@@ -109,13 +109,13 @@ const projectsData = [
     },
 
     gallery: [
-      { type: 'image', src: '/images/projects/Collison/Timeline 1_00_00_06_12.jpg' },
-      { type: 'image', src: '/images/projects/Collison/Timeline 1_00_00_09_15.jpg' },
-      { type: 'image', src: '/images/projects/Collison/Timeline 1_00_00_32_13.jpg' },
-      { type: 'image', src: '/images/projects/Collison/Timeline 1_00_00_31_01.jpg' },
-      { type: 'image', src: '/images/projects/Collison/Timeline 1_00_00_04_06.jpg' },
-      { type: 'image', src: '/images/projects/Collison/Timeline 1_00_00_41_24.jpg' },
-      { type: 'image', src: '/images/projects/Collison/Timeline 1_00_00_19_19.jpg' },
+      { type: 'image', src: '/images/projects/Collison/Timeline 1_00_00_06_12.webp' },
+      { type: 'image', src: '/images/projects/Collison/Timeline 1_00_00_09_15.webp' },
+      { type: 'image', src: '/images/projects/Collison/Timeline 1_00_00_32_13.webp' },
+      { type: 'image', src: '/images/projects/Collison/Timeline 1_00_00_31_01.webp' },
+      { type: 'image', src: '/images/projects/Collison/Timeline 1_00_00_04_06.webp' },
+      { type: 'image', src: '/images/projects/Collison/Timeline 1_00_00_41_24.webp' },
+      { type: 'image', src: '/images/projects/Collison/Timeline 1_00_00_19_19.webp' },
     ]
   },
 
@@ -142,7 +142,7 @@ const projectsData = [
 
     gallery: [
       { type: 'image', src: '/images/projects/Wednesday/Wednesday .jpg' },
-      { type: 'image', src: '/  images/projects/Wednesday/wednesday drawings2.jpg' },
+      { type: 'image', src: '/images/projects/Wednesday/wednesday drawings2.jpg' },
       { type: 'image', src: '/images/projects/Wednesday/Wednesday3.jpg' },
       { type: 'image', src: '/images/projects/Wednesday/wednesday drawings4.jpg' },
       { type: 'image', src: '/images/projects/Wednesday/Wednesday5.jpg' },
@@ -292,30 +292,7 @@ const projectsData = [
       ]
   },
 
-  {
-    id: 'architecture',
-    title: 'Architecture',
-    category: 'Architectural Designer',
-    yearStart: 2021,
-    yearEnd: 2023,
-    director: 'Myles Desenberg',
-    role: 'Assistant',
-    tags: ['Buttress Architects, Freelance, YOUTH Studio, Manchester University'],
-
-    media: {
-      type: 'image',
-      src: '/images/projects/Architecture/XXX'
-    },
-
-    heroMedia: null,
-
-    gallery: [
-      { type: 'image', src: '/images/projects/Miltz/Miltz4.jpg' },
-      { type: 'image', src: '/images/projects/Miltz/Miltz3.jpg' },
-      { type: 'image', src: '/images/projects/Miltz/Miltz2.jpg' },
-      { type: 'image', src: '/images/projects/Miltz/Miltz1.jpg' },
-    ]
-  }
+  
 ]
 
 // safe export (NOW SORT BY yearStart)

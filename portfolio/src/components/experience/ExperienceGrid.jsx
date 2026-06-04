@@ -21,7 +21,7 @@ export default function ExperienceGrid({
           position: 'sticky',
           top: 0,
           zIndex: 50,
-          background: '#f7f5f2', // must match page bg
+          background: 'transparent',
         }}
       >
         {/* Header row */}
@@ -33,27 +33,27 @@ export default function ExperienceGrid({
             paddingBottom: '12px',
           }}
         >
-          <div className="uppercase" style={{ fontSize: '9px', letterSpacing: '0.18em' }}>
+          <div className="uppercase" style={{ fontSize: '12px', letterSpacing: '0.18em' }}>
             Production
           </div>
 
-          <div className="uppercase" style={{ fontSize: '9px', letterSpacing: '0.18em' }}>
+          <div className="uppercase" style={{ fontSize: '12px', letterSpacing: '0.18em' }}>
             Client
           </div>
 
-          <div className="uppercase" style={{ fontSize: '9px', letterSpacing: '0.18em' }}>
+          <div className="uppercase" style={{ fontSize: '12px', letterSpacing: '0.18em' }}>
             Production Co.
           </div>
 
-          <div className="uppercase" style={{ fontSize: '9px', letterSpacing: '0.18em' }}>
+          <div className="uppercase" style={{ fontSize: '12px', letterSpacing: '0.18em' }}>
             HOD
           </div>
 
-          <div className="uppercase" style={{ fontSize: '9px', letterSpacing: '0.18em' }}>
+          <div className="uppercase" style={{ fontSize: '12px', letterSpacing: '0.18em' }}>
             Director
           </div>
 
-          <div className="uppercase" style={{ fontSize: '9px', letterSpacing: '0.18em' }}>
+          <div className="uppercase" style={{ fontSize: '12px', letterSpacing: '0.18em' }}>
             Role
           </div>
         </div>

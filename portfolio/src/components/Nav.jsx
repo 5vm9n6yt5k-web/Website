@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const NAV_LINKS = [
-  { label: 'Film',       path: '/work'       },
-  { label: 'Image',      path: '/photography' },
+  { label: 'Film',       path: '/film'       },
+  { label: 'Image',      path: '/image'      },
   { label: 'Experience', path: '/experience' },
   { label: 'About',      path: '/about'      },
 ]
