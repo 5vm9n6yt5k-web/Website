@@ -5,7 +5,7 @@
 
 // ─── UNIFIED EXPERIENCE ENTRIES ────────────────────────────────────────────────
 // Add your entries here. Each entry should have:
-// { production, client, productionCompany, hod, director, role, year }
+// { production, client, productionCompany, hod, director, role, year, projectId?, youtubeUrl? }
 export const experience = [
   {
     production: 'Bridgerton S4 Junket',
@@ -15,6 +15,7 @@ export const experience = [
     director: 'NA',
     role: 'Assistant Art Director',
     year: 2024,
+    
   },
   {
     production: 'End of the Road, Mom’s Song',
@@ -24,9 +25,11 @@ export const experience = [
     director: 'Mike Warzin',
     role: 'Props Assistant',
     year: 2024,
+    youtubeUrl: 'https://www.youtube.com/watch?v=poMDjgrRSMQ',
   },
   {
     production: 'Argos Christmas Ad 2025',
+    projectId: 'argos-christmas',
     client: 'Argos',
     productionCompany: 'HungryMan',
     hod: 'Olly Williams',
@@ -36,6 +39,7 @@ export const experience = [
   },
   {
     production: 'World Cup',
+    projectId: 'lays-world-cup',
     client: 'Lays',
     productionCompany: 'Hungry Man',
     hod: 'Ashley Dando',
@@ -45,6 +49,7 @@ export const experience = [
   },
   {
     production: 'Wanta Fanta',
+    projectId: 'wanta-fanta',
     client: 'Fanta',
     productionCompany: 'Riff Raff',
     hod: 'Olly Williams',
@@ -60,9 +65,11 @@ export const experience = [
     director: 'Taika Waititi',
     role: 'Set Designer',
     year: 2024,
+    youtubeUrl: 'https://www.youtube.com/watch?v=B0IkQxQDIEs'
   },
   {
     production: 'Collision',
+    projectId: 'collision',
     client: 'Javia Villa',
     productionCompany: 'Ambient Lane Films',
     hod: 'Toby Goldsmith',
@@ -81,6 +88,7 @@ export const experience = [
   },
   {
     production: 'Wednesday S2 Junket',
+    projectId: 'wednesday-s2',
     client: 'Netflix',
     productionCompany: 'Once Upon A Time',
     hod: 'Beanie Goldsmith',
@@ -96,6 +104,7 @@ export const experience = [
     director: 'NA',
     role: 'Buyer & Set Designer',
     year: 2024,
+    youtubeUrl: 'https://www.houseandgarden.co.uk/article/omaze-cornwall-house-2026'
   },
   {
     production: 'Nosferatu Junket',
@@ -114,6 +123,7 @@ export const experience = [
     director: 'NA',
     role: 'Draftsman & Buyer',
     year: 2024,
+    youtubeUrl: 'https://www.youtube.com/watch?v=8isbH5X8ulE',
   },
   {
     production: 'Coniston House',
@@ -135,6 +145,7 @@ export const experience = [
   },
   {
     production: 'Kaos Junket',
+    projectId: 'kaos',
     client: 'Netflix',
     productionCompany: 'Once Upon A Time',
     hod: 'Beanie Goldsmith',
@@ -198,6 +209,7 @@ export const experience = [
   },
   {
     production: 'McLaren Driven By Change',
+    projectId: 'miltz-x-mclaren-x-vuse',
     client: 'Vuse',
     productionCompany: 'Founder Creative',
     hod: 'Daniel Maclagan',
@@ -225,6 +237,7 @@ export const experience = [
   },
   {
     production: 'Welcome to Brewser',
+    projectId: 'brewser',
     client: 'Brewser',
     productionCompany: 'Image Partnership',
     hod: 'Daniel Maclagan',
