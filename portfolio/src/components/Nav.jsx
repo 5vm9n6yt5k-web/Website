@@ -35,13 +35,17 @@ export default function Nav({ dark = false }) {
     <>
       <nav className={navClasses}>
         {/* Logo / Name */}
-        <Link
-          to="/"
-          className={`font-ui font-light tracking-widest uppercase ${logoColor} hover:opacity-60 transition-opacity duration-300`}
-          style={{ letterSpacing: '0.2em', fontSize: '24px' }}
-        >
-          Toby Goldsmith
-        </Link>
+        {location.pathname !== '/' ? (
+          <Link
+            to="/"
+            className={`font-ui font-light tracking-widest uppercase ${logoColor} hover:opacity-60 transition-opacity duration-300`}
+            style={{ letterSpacing: '0.2em', fontSize: '24px' }}
+          >
+            Toby Goldsmith
+          </Link>
+        ) : (
+          <div aria-hidden="true" />
+        )}
 
         {/* Desktop links */}
         {location.pathname !== '/' && (

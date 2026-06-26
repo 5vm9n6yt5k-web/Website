@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Casta';
+  src: url('/fonts/Casta-Thin.otf') format('opentype');
+  font-weight: 100 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Casta';
+  src: url('/fonts/Casta-ThinSlanted.otf') format('opentype');
+  font-weight: 100 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MilkyWalky';
+  src:
+    local('Milky Walky Regular'),
+    local('MilkyWalky-Regular'),
+    url('/fonts/MilkyWalky-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Humane';
+  src: url('/fonts/Humane-VF.ttf') format('truetype');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ─── Variables ─────────────────────────────────── */
 :root {
   --ink:   #0c0b0a;
@@ -25,8 +60,46 @@ body {
   margin: 0;
   background-color: var(--paper);
   color: var(--ink);
-  font-family: 'Barlow', system-ui, sans-serif;
-  font-weight: 300;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+}
+
+body,
+p,
+li,
+a,
+span,
+div,
+button,
+input,
+textarea,
+select,
+.font-ui {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-display,
+.nav-root,
+.nav-root * {
+  font-family: 'MilkyWalky', Georgia, serif;
+}
+
+.page-title {
+  font-size: clamp(28px, 3.8vw, 40px);
+  line-height: 1.05;
+}
+
+.section-heading {
+  font-size: clamp(14px, 1.4vw, 16px);
+  line-height: 1.2;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 /* ─── Scrollbar ──────────────────────────────────── */

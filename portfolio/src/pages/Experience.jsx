@@ -14,15 +14,14 @@ export default function Experience() {
         {/* ─── TITLE ───────────────────────────── */}
         <div className="mb-16">
           <p
-            className="font-ui font-light text-mid uppercase mb-6"
-            style={{ fontSize: '9px', letterSpacing: '0.25em' }}
+            className="font-display font-normal text-mid uppercase mb-6 section-heading"
+            style={{ letterSpacing: '0.25em' }}
           >
             Experience
           </p>
 
           <h1
-            className="font-ui font-light text-ink"
-            style={{ fontSize: 'clamp(32px, 4vw, 48px)', lineHeight: 1.1 }}
+            className="font-display font-normal text-ink page-title"
           >
             Credits &<br />Background
           </h1>

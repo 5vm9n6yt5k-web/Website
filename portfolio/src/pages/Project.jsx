@@ -177,7 +177,7 @@ export default function Project() {
           </p>
 
           <h1
-            className="font-ui font-light text-paper"
+            className="font-display font-normal text-paper"
             style={{ fontSize: 'clamp(36px, 7vw, 88px)', lineHeight: 1.0 }}
           >
             {project.title}
@@ -276,7 +276,7 @@ export default function Project() {
               Next Project
             </p>
 
-            <h3 className="text-white text-[clamp(24px,4vw,20px)]">
+            <h3 className="font-display text-white text-[clamp(24px,4vw,20px)]">
               {nextProject.title}
             </h3>
           </div>

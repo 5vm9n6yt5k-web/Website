@@ -49,7 +49,7 @@ export default function About() {
             <div className="lg:col-span-7 lg:col-start-5">
 
               <h1
-                className="font-ui font-light text-ink mb-16"
+                className="font-display font-normal text-ink mb-16"
                 style={{
                   fontSize: 'clamp(40px, 6vw, 80px)',
                   lineHeight: 1.0,

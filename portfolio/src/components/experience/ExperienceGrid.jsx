@@ -26,34 +26,35 @@ export default function ExperienceGrid({
       >
         {/* Header row */}
         <div
-          className="hidden md:grid font-ui font-light text-mid mb-3"
+          className="hidden md:grid font-display font-normal text-mid section-heading"
           style={{
             gridTemplateColumns: columnsTemplate,
-            paddingTop: '12px',
+            alignItems: 'start',
+            paddingTop: '0px',
             paddingBottom: '12px',
           }}
         >
-          <div className="uppercase" style={{ fontSize: '12px', letterSpacing: '0.18em' }}>
+          <div className="uppercase section-heading" style={{ fontFamily: 'MilkyWalky, Georgia, serif' }}>
             Production
           </div>
 
-          <div className="uppercase" style={{ fontSize: '12px', letterSpacing: '0.18em' }}>
+          <div className="uppercase section-heading" style={{ fontFamily: 'MilkyWalky, Georgia, serif' }}>
             Client
           </div>
 
-          <div className="uppercase" style={{ fontSize: '12px', letterSpacing: '0.18em' }}>
+          <div className="uppercase section-heading" style={{ fontFamily: 'MilkyWalky, Georgia, serif' }}>
             Production Co.
           </div>
 
-          <div className="uppercase" style={{ fontSize: '12px', letterSpacing: '0.18em' }}>
+          <div className="uppercase section-heading" style={{ fontFamily: 'MilkyWalky, Georgia, serif' }}>
             HOD
           </div>
 
-          <div className="uppercase" style={{ fontSize: '12px', letterSpacing: '0.18em' }}>
+          <div className="uppercase section-heading" style={{ fontFamily: 'MilkyWalky, Georgia, serif' }}>
             Director
           </div>
 
-          <div className="uppercase" style={{ fontSize: '12px', letterSpacing: '0.18em' }}>
+          <div className="uppercase section-heading" style={{ fontFamily: 'MilkyWalky, Georgia, serif' }}>
             Role
           </div>
         </div>
@@ -77,4 +78,4 @@ export default function ExperienceGrid({
 }
 
 export const DEFAULT_COLUMNS_TEMPLATE =
-  '2fr 1.5fr 1.5fr 1fr 1fr 1fr'
+  'minmax(0, 2fr) minmax(0, 1.5fr) minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr)'

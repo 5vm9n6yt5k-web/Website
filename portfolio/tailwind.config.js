@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        ui: ['"Barlow"', 'system-ui', 'sans-serif'],
+        display: ['"MilkyWalky"', 'Georgia', 'serif'],
+        ui: ['"Helvetica Neue"', 'Arial', 'sans-serif'],
       },
       colors: {
         ink: '#0c0b0a',

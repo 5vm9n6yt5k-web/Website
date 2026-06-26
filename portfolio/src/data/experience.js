@@ -7,6 +7,28 @@
 // Add your entries here. Each entry should have:
 // { production, client, productionCompany, hod, director, role, year, projectId?, youtubeUrl? }
 export const experience = [
+
+  {
+    production: 'Bridgerton S4 Pt 2 Junket',
+    client: 'Netflix',
+    productionCompany: 'Once Upon A Time',
+    hod: 'Beanie Goldsmith',
+    director: 'NA',
+    role: 'Assistant Art Director',
+    year: 2024,
+    
+  },
+{
+    production: 'Porth Arvor',
+    client: 'Omaze',
+    productionCompany: 'Dunhill & Lisney',
+    hod: 'Chloe White',
+    director: 'NA',
+    role: 'Draftsman',
+    year: 2024,
+    
+  },
+
   {
     production: 'Bridgerton S4 Junket',
     client: 'Netflix',
@@ -17,6 +39,7 @@ export const experience = [
     year: 2024,
     
   },
+
   {
     production: 'End of the Road, Mom’s Song',
     client: 'Old Spice',

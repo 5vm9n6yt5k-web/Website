@@ -9,10 +9,9 @@ export default function ExperienceSidebar({
   return (
     <aside className="space-y-8 lg:sticky lg:top-24">
       {/* ─── CONTACT ───────────────────────────────────────────────────── */}
-<div>
+<div className="pt-2">
   <h4
-    className="font-ui font-light text-mid uppercase mb-3"
-    style={{ fontSize: '9px', letterSpacing: '0.18em' }}
+    className="font-display font-normal text-mid uppercase mb-3 section-heading"
   >
     Contact
   </h4>
@@ -52,8 +51,7 @@ export default function ExperienceSidebar({
       {/* ─── TECHNICAL SKILLS ─────────────────────────────────────────── */}
       <div>
         <h4
-          className="font-ui font-light text-mid uppercase mb-3"
-          style={{ fontSize: '9px', letterSpacing: '0.18em' }}
+          className="font-display font-normal text-mid uppercase mb-3 section-heading"
         >
           Technical Skills
         </h4>
@@ -74,8 +72,7 @@ export default function ExperienceSidebar({
       {/* ─── EMPLOYMENT ───────────────────────────────────────────────── */}
       <div>
         <h4
-          className="font-ui font-light text-mid uppercase mb-3"
-          style={{ fontSize: '9px', letterSpacing: '0.18em' }}
+          className="font-display font-normal text-mid uppercase mb-3 section-heading"
         >
           Employment
         </h4>
@@ -109,8 +106,7 @@ export default function ExperienceSidebar({
       {/* ─── EDUCATION ────────────────────────────────────────────────── */}
       <div>
         <h4
-          className="font-ui font-light text-mid uppercase mb-3"
-          style={{ fontSize: '9px', letterSpacing: '0.18em' }}
+          className="font-display font-normal text-mid uppercase mb-3 section-heading"
         >
           Education
         </h4>

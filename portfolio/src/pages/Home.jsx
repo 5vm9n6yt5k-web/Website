@@ -54,7 +54,7 @@ function ProjectCard({ project }) {
         </p>
 
         <h2
-          className="font-ui font-light text-paper"
+          className="font-display font-normal text-paper"
           style={{ fontSize: 'clamp(18px, 2.5vw, 28px)', lineHeight: 1.1 }}
         >
           {project.title}

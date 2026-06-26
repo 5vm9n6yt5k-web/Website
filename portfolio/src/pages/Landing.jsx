@@ -2,86 +2,44 @@ import { Link } from 'react-router-dom'
 
 export default function Landing() {
   return (
-    <div className="min-h-screen bg-paper page-enter relative overflow-hidden">
-      {/* Hero Section - Full Screen */}
-      <div className="relative w-full h-screen overflow-hidden">
-        
-        {/* Background Image */}
-        <img
-          src="/images/projects/Fanta/Tokyo 09.09.25 III.jpg"
-          alt="Portfolio hero"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-
-        {/* Base dark overlay (bottom fade) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-paper opacity-20" />
-
-        {/* NEW: radial vignette JUST for readability */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'radial-gradient(circle at center, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0) 70%)',
-          }}
-        />
-
-        {/* Centered ENTER */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Link
-            to="/film"
-            className="group relative flex flex-col items-center justify-center"
+    <main className="min-h-screen bg-paper page-enter overflow-hidden">
+      <Link
+        to="/film"
+        aria-label="View projects"
+        className="grid min-h-screen grid-cols-1 md:grid-cols-2"
+      >
+        <div className="flex min-h-[50vh] flex-col justify-center px-6 py-28 sm:px-12 md:min-h-screen md:px-16 lg:px-24">
+          <h1
+            className="font-display font-normal leading-none text-ink"
+            style={{
+              fontFamily: '"MilkyWalky", "Milky Walky Regular", Georgia, serif',
+              fontSize: 'clamp(82px, 12vw, 155px)',
+              letterSpacing: '0',
+            }}
           >
-            <span
-              className="font-ui font-light uppercase text-paper"
-              style={{
-                fontSize: '30px',
-                letterSpacing: '0.45em',
-                textShadow: '0 0 18px rgba(0,0,0,0.55)',
-                transition:
-                  'transform 900ms cubic-bezier(0.16, 1, 0.3, 1)',
-              }}
-            >
-              ENTER
-            </span>
+            Toby Goldsmith
+          </h1>
 
-            {/* underline */}
-            <div
-              style={{
-                marginTop: '14px',
-                height: '1px',
-                width: '0%',
-                background: 'rgba(255,255,255,0.75)',
-                transition:
-                  'width 900ms cubic-bezier(0.16, 1, 0.3, 1)',
-              }}
-              className="enter-line"
-            />
-
-            {/* subtle metadata */}
-            <span
-              className="font-ui font-light uppercase text-paper"
-              style={{
-                marginTop: '18px',
-                fontSize: '24px',
-                letterSpacing: '0.35em',
-                opacity: 0.8,
-              }}
-            >
-              ART · DEPARTMENT
-            </span>
-
-            <style>{`
-              .group:hover .enter-line {
-                width: 100%;
-              }
-
-              .group:hover span:first-child {
-                transform: translateY(-2px);
-              }
-            `}</style>
-          </Link>
+          <p
+            className="mt-5 font-display font-normal text-ink"
+            style={{
+              fontFamily: '"MilkyWalky", "Milky Walky Regular", Georgia, serif',
+              fontSize: 'clamp(28px, 3.4vw, 54px)',
+              letterSpacing: '0',
+            }}
+          >
+            Art Department
+          </p>
         </div>
-      </div>
-    </div>
+
+        <div className="h-[50vh] overflow-hidden md:h-screen">
+          <img
+            src="/images/projects/Fanta/Tokyo 09.09.25 III.jpg"
+            alt="Portfolio hero"
+            className="h-full w-full object-cover"
+          />
+        </div>
+      </Link>
+    </main>
   )
 }

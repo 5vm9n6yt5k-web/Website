@@ -345,11 +345,11 @@ export default function Photography() {
           zIndex: 2,
         }}
       >
-        <h1 style={{ fontSize: '3rem', fontWeight: 300 }}>
+        <h1 className="font-display" style={{ fontSize: '3rem', fontWeight: 400 }}>
           IMAGE
         </h1>
 
-        <p style={{ opacity: 0.5 }}>
+        <p className="font-display" style={{ opacity: 0.5 }}>
           Ski Photographer | Niseko 25/26 Season
         </p>
       </div>
@@ -374,6 +374,21 @@ export default function Photography() {
           />
         ))}
       </div>
+
+      <footer className="border-t border-light px-8 md:px-16 lg:px-24 py-6 flex justify-between">
+        <span
+          className="font-ui font-light text-mid uppercase"
+          style={{ fontSize: '9px', letterSpacing: '0.2em' }}
+        >
+          © {new Date().getFullYear()} Toby Goldsmith
+        </span>
+        <span
+          className="font-ui font-light text-mid uppercase"
+          style={{ fontSize: '9px', letterSpacing: '0.2em' }}
+        >
+          Barcelona · London
+        </span>
+      </footer>
 
       {/* lightbox */}
       {lightbox !== null && (
