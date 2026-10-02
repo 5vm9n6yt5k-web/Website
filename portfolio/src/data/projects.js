@@ -249,7 +249,7 @@ const projectsData = [
     heroMedia: {
       type: 'video',
       source: 'local',
-      src: '/images/projects/Miltz/Driven%20By%20Change.mp4'
+      src: '/images/projects/Miltz/DrivenByChange.mp4'
     },
 
     gallery: [
