@@ -82,6 +82,7 @@ function Lightbox({ images, initial, onClose }) {
   const [loaded, setLoaded] = useState(false)
   const [hovered, setHovered] = useState(false)
   const [transitioning, setTransitioning] = useState(false)
+  const [isFullscreen, setIsFullscreen] = useState(false)
 
   const active = images[index]
 
@@ -135,6 +136,37 @@ function Lightbox({ images, initial, onClose }) {
       window.removeEventListener('keydown', handleKey)
     }
   }, [index, images.length])
+
+  // ─── FULLSCREEN CONTROL ───────────────────────────────
+  const toggleFullscreen = async () => {
+    if (!document.fullscreenElement) {
+      try {
+        await document.documentElement.requestFullscreen()
+        setIsFullscreen(true)
+      } catch (err) {
+        console.error('Failed to enter fullscreen', err)
+      }
+    } else {
+      try {
+        await document.exitFullscreen()
+        setIsFullscreen(false)
+      } catch (err) {
+        console.error('Failed to exit fullscreen', err)
+      }
+    }
+  }
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(Boolean(document.fullscreenElement))
+    }
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange)
+
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange)
+    }
+  }, [])
 
   // ─── SCRUB CONTROL ─────────────────────────────────────
   const handleScrub = (e) => {
@@ -198,12 +230,45 @@ function Lightbox({ images, initial, onClose }) {
         }}
       />
 
+      {/* fullscreen button */}
+      <button
+        onClick={(e) => {
+          e.stopPropagation()
+          toggleFullscreen()
+        }}
+        aria-label={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
+        style={{
+          position: 'absolute',
+          top: 24,
+          right: 24,
+          zIndex: 15,
+          background: 'rgba(255,255,255,0.12)',
+          border: '1px solid rgba(255,255,255,0.16)',
+          color: 'white',
+          width: 40,
+          height: 40,
+          borderRadius: '50%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          backdropFilter: 'blur(8px)',
+          fontSize: 16,
+        }}
+      >
+        {isFullscreen ? '⤡' : '⛶'}
+      </button>
+
       {/* image */}
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
-          width: '90vw',
-          maxWidth: 1200,
+          width: isFullscreen ? '100vw' : '90vw',
+          maxWidth: isFullscreen ? '100vw' : 1200,
+          height: isFullscreen ? '100vh' : 'auto',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
           transform: transitioning
             ? 'scale(0.985)'
             : 'scale(1)',
@@ -218,7 +283,8 @@ function Lightbox({ images, initial, onClose }) {
           onLoad={() => setLoaded(true)}
           style={{
             width: '100%',
-            maxHeight: '80vh',
+            maxWidth: isFullscreen ? '100vw' : '100%',
+            maxHeight: isFullscreen ? '100vh' : '80vh',
             objectFit: 'contain',
             opacity: loaded ? 1 : 0,
             transition:

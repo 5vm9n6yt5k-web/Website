@@ -8,6 +8,16 @@
 // { production, client, productionCompany, hod, director, role, year, projectId?, youtubeUrl? }
 export const experience = [
 
+   {
+    production: 'White Christmas',
+    client: 'Disney+',
+    productionCompany: 'VCCP',
+    hod: 'Lucie Red',
+    director: 'Lucy Forbes',
+    role: 'Set Designer',
+    year: 2024,
+    
+  },
   {
     production: 'Bridgerton S4 Pt 2 Junket',
     client: 'Netflix',

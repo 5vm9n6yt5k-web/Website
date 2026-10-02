@@ -50,7 +50,7 @@ const projectsData = [
     heroMedia: {
       type: 'video',
       source: 'youtube',
-      src: 'https://youtu.be/_mXucLBdt2w'
+      src: 'https://www.youtube.com/watch?v=ZgHNasdtFU0'
     },
 
     gallery: [
