@@ -124,6 +124,18 @@ h6,
   }
 }
 
+@keyframes home-scroll-bounce {
+  0%,
+  100% {
+    transform: translateY(0px);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
+
 .page-enter {
   animation: pageIn 0.55s cubic-bezier(0.25, 0.1, 0.25, 1) both;
 }

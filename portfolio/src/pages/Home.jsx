@@ -67,8 +67,63 @@ function ProjectCard({ project }) {
 export default function Home() {
   return (
     <div className="min-h-screen bg-paper">
+      <main className="pb-16 px-4 md:px-6 lg:px-8 pt-8 md:pt-12">
+        <section className="relative grid min-h-screen grid-cols-1 md:grid-cols-2 md:mb-14">
+          <div className="flex min-h-[50vh] flex-col justify-center px-6 py-10 sm:px-12 md:min-h-screen md:px-16 lg:px-24">
+            <h1
+              className="font-display font-normal leading-none text-ink"
+              style={{
+                fontFamily: '"MilkyWalky", "Milky Walky Regular", Georgia, serif',
+                fontSize: 'clamp(82px, 12vw, 155px)',
+                letterSpacing: '0',
+              }}
+            >
+              Toby Goldsmith
+            </h1>
 
-      <main className="pt-[100px] pb-16 px-4 md:px-6 lg:px-8">
+            <p
+              className="mt-5 font-display font-normal text-ink"
+              style={{
+                fontFamily: '"MilkyWalky", "Milky Walky Regular", Georgia, serif',
+                fontSize: 'clamp(28px, 3.4vw, 54px)',
+                letterSpacing: '0',
+              }}
+            >
+              Art Department
+            </p>
+          </div>
+
+          <div className="hidden md:block min-h-screen" aria-hidden="true" />
+
+          <div
+            className="hidden md:flex absolute inset-x-0 bottom-0 justify-center pb-28 pointer-events-none"
+            aria-hidden="true"
+          >
+            <div
+              className="flex items-center justify-center text-ink/60"
+              style={{ animation: 'home-scroll-bounce 2.8s ease-in-out infinite', transform: 'translateY(-4px)' }}
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="block"
+                style={{ transform: 'translateY(2px)' }}
+              >
+                <path
+                  d="M6 9L12 15L18 9"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+        </section>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
           {projects.map(project => (
             <ProjectCard key={project.id} project={project} />

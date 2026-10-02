@@ -104,11 +104,12 @@ const projectsData = [
 
     heroMedia: {
       type: 'video',
-      source: 'youtube',
-      src: 'https://www.youtube.com/watch?v=Q7CIbYdeWB4'
+      source: 'local',
+      src: '/images/projects/Collison/collision.mp4'
     },
 
     gallery: [
+      { type: 'video', src: '/images/projects/Collison/collision.mp4' },
       { type: 'image', src: '/images/projects/Collison/Timeline 1_00_00_06_12.webp' },
       { type: 'image', src: '/images/projects/Collison/Timeline 1_00_00_09_15.webp' },
       { type: 'image', src: '/images/projects/Collison/Timeline 1_00_00_32_13.webp' },
@@ -136,11 +137,12 @@ const projectsData = [
 
     heroMedia: {
       type: 'video',
-      source: 'youtube',
-      src: ''
+      source: 'local',
+      src: '/images/projects/Wednesday/wednesday.mp4'
     },
 
     gallery: [
+      { type: 'video', src: '/images/projects/Wednesday/wednesday.mp4' },
       { type: 'image', src: '/images/projects/Wednesday/Wednesday .jpg' },
       { type: 'image', src: '/images/projects/Wednesday/wednesday drawings2.jpg' },
       { type: 'image', src: '/images/projects/Wednesday/Wednesday3.jpg' },

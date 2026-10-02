@@ -75,6 +75,7 @@ export default function Project() {
   }
 
   const hero = project.heroMedia || project.media
+  const hasVideoSource = (src) => typeof src === 'string' && src.trim().length > 0
 
   // ─── YEAR FORMATTER (FIXED) ───────────────────────────────────
   const formatYear = (p) => {
@@ -95,6 +96,7 @@ export default function Project() {
           if (
             hero.type === 'video' &&
             hero.source === 'youtube' &&
+            hasVideoSource(hero.src) &&
             !ytError
           ) {
             const videoId = getYouTubeId(hero.src)
@@ -124,7 +126,11 @@ export default function Project() {
           }
 
           // ─── LOCAL VIDEO ───────────────────────────────────
-          if (hero.type === 'video' && hero.source === 'local') {
+          if (
+            hero.type === 'video' &&
+            hero.source === 'local' &&
+            hasVideoSource(hero.src)
+          ) {
             const isHlsStream = hero.src && hero.src.toLowerCase().includes('.m3u8')
 
             return (
@@ -234,20 +240,27 @@ export default function Project() {
       {/* ─── GALLERY ─────────────────────────────────────────── */}
       <div className="flex flex-col gap-4 px-4 py-4">
 
-        {project.gallery?.map((item, i) => (
-          <div key={i} className="w-full border border-white/0 bg-[#0] p-2">
+        {project.gallery?.map((item, i) => {
+          const itemSrc = typeof item.src === 'string' ? item.src.trim() : ''
 
-            {item.type === 'video' ? (
-              <video
-                src={item.src}
-                controls
-                playsInline
-                preload="metadata"
-                controlsList="nodownload noplaybackrate"
-                className="w-full object-contain"
-                style={{ height: 'clamp(300px, 45vw, 640px)' }}
-              />
-            ) : (
+          if (item.type === 'video' && itemSrc) {
+            return (
+              <div key={i} className="w-full border border-white/0 bg-[#0] p-2">
+                <video
+                  src={itemSrc}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  controlsList="nodownload noplaybackrate"
+                  className="w-full object-contain"
+                  style={{ height: 'clamp(300px, 45vw, 640px)' }}
+                />
+              </div>
+            )
+          }
+
+          return (
+            <div key={i} className="w-full border border-white/0 bg-[#0] p-2">
               <img
                 src={item.src}
                 alt={`${project.title} ${i + 1}`}
@@ -255,10 +268,9 @@ export default function Project() {
                 style={{ height: 'clamp(300px, 45vw, 640px)' }}
                 loading="lazy"
               />
-            )}
-
-          </div>
-        ))}
+            </div>
+          )
+        })}
       </div>
 
       {/* ─── NEXT PROJECT ────────────────────────────────────── */}
