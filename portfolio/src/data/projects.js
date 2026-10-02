@@ -19,7 +19,7 @@ const projectsData = [
     heroMedia: {
       type: 'video',
       source: 'youtube',
-      src: 'https://www.youtube.com/watch?v=zK3jrnfGZws'
+      src: 'https://www.youtube.com/watch?v=ZgHNasdtFU0'
     },
 
     gallery: [
@@ -50,7 +50,7 @@ const projectsData = [
     heroMedia: {
       type: 'video',
       source: 'youtube',
-      src: 'https://www.youtube.com/watch?v=ZgHNasdtFU0'
+      src: 'https://www.youtube.com/watch?v=_mXucLBdt2w'
     },
 
     gallery: [
@@ -249,7 +249,7 @@ const projectsData = [
     heroMedia: {
       type: 'video',
       source: 'local',
-      src: '/images/projects/Miltz/Driven By Change.mp4'
+      src: '/images/projects/Miltz/Driven%20By%20Change.mp4'
     },
 
     gallery: [

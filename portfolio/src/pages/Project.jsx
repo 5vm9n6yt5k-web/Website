@@ -125,6 +125,8 @@ export default function Project() {
 
           // ─── LOCAL VIDEO ───────────────────────────────────
           if (hero.type === 'video' && hero.source === 'local') {
+            const isHlsStream = hero.src && hero.src.toLowerCase().includes('.m3u8')
+
             return (
               <video
                 controls
@@ -135,7 +137,10 @@ export default function Project() {
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
               >
-                <source src={hero.src} type="video/mp4" />
+                <source
+                  src={hero.src}
+                  type={isHlsStream ? 'application/vnd.apple.mpegurl' : 'video/mp4'}
+                />
               </video>
             )
           }
